@@ -1,0 +1,47 @@
+@use 'variables' as var;
+
+@mixin hover ($colorFondo){
+    border: 2px solid var.$TransparentWhite;
+            color:var.$TransparentWhite;
+            background-color: $colorFondo;
+            cursor: pointer;
+}
+
+@mixin tarjetaPrincipal($color) {
+    background-color: $color;
+    width: 100%;
+    padding-left: 50px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    height: 440px;
+}
+
+@mixin boton($colorTexto, $familia, $colorfond) {
+    color: $colorTexto;
+    width: 150px;
+    height: 45px;
+    border-radius: 50px;
+    border: none;
+    margin-top: 30px;
+    font-size: 1.05em;
+    font-family: $familia;
+    background-color: $colorfond;
+}
+
+@mixin parrafo {
+    color:var.$TransparentWhite;
+    font-family: var.$font-familyLexend;
+    line-height: 25px;
+    margin-top: 30px;
+    padding-right: 50px;
+    font-size: 0.95em;
+}
+
+@mixin titulo {
+    font-size: 2.7em;
+        font-family: var.$font-familyBig;
+        text-transform: uppercase;
+        margin-top: 30px;
+        color:var.$TransparentWhite;
+        font-weight: 700;
+}

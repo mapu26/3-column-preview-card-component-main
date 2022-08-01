@@ -1,0 +1,108 @@
+@use 'variables' as var;
+@use 'mixins';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 15px;
+    background-color: var.$VeryLightGray;
+}
+
+.contenedor{
+    width: 325px;
+    height: 1320px;
+    margin: 90px auto;
+}
+
+.sedan{
+    @include mixins.tarjetaPrincipal(var.$BrightOrange);
+    border-radius: 10px 10px 0px 0px;
+    &__titulo{
+        @include mixins.titulo;
+    }
+    &__parrafo{
+        @include mixins.parrafo;
+    }
+    &__boton{
+        @include mixins.boton(var.$BrightOrange, var.$font-familyLexend, var.$VeryLightGray);
+        &:hover{
+            @include mixins.hover(var.$BrightOrange);
+        }
+    }
+}
+
+.suv{
+    @include mixins.tarjetaPrincipal(var.$DarkCyan);
+    &__titulo{
+        @include mixins.titulo;
+    }
+    &__parrafo{
+        @include mixins.parrafo;
+    }
+    &__boton{
+        @include mixins.boton(var.$DarkCyan, var.$font-familyLexend, var.$VeryLightGray);
+        &:hover{
+            @include mixins.hover(var.$DarkCyan);
+        }
+    }
+}
+
+.luxury{
+    @include mixins.tarjetaPrincipal(var.$VeryDarkCyan);
+    border-radius: 0px 0px 10px 10px;
+    &__titulo{
+        @include mixins.titulo;
+    }
+    &__parrafo{
+        @include mixins.parrafo;
+    }
+    &__boton{
+        @include mixins.boton(var.$VeryDarkCyan, var.$font-familyLexend, var.$VeryLightGray);
+        &:hover{
+            @include mixins.hover(var.$VeryDarkCyan);
+        }
+    }
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    a{
+        color: hsl(228, 45%, 44%)
+    }
+}
+
+@media(min-width:1440px){
+    .contenedor{
+        display: flex;
+        width: 1000px;
+        height: 1500px;
+    }
+    .sedan{
+        width: 1000px;
+        height: 500px;
+        border-radius: 0px;
+        &__boton{
+            margin-top: 100px;
+        }
+    }
+    .suv{
+        width: 1000px;
+        height: 500px;
+        &__boton{
+            margin-top: 75px;
+        }
+    }
+    .luxury{
+        width: 1000px;
+        height: 500px;
+        border-radius: 0px;
+        &__boton{
+            margin-top: 100px;
+        }
+    }
+}
